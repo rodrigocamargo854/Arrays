@@ -5,6 +5,9 @@ namespace arrays
     class Program
     {
 
+
+
+
         static void Exercise1opcional()
         {
             //versão com inserção automatica dos arrays
@@ -95,17 +98,18 @@ namespace arrays
         static void Exercise3()
         {
             var newArrays = new int[11];
-            var temp = 0;
+
             for (int i = 1; i < newArrays.Length; i++)
             {
                 Console.WriteLine($"{i}º number:  ");
                 newArrays[i] = int.Parse(Console.ReadLine());
                 Console.Clear();
             }
+
             Console.WriteLine("Digite um número: ");
             int number = int.Parse(Console.ReadLine());
-
-            foreach (int n in newArrays)
+            int temp = 0;
+            for (int n = 1; n < newArrays.Length; n++)
             {
                 if (number == newArrays[n])
                 {
@@ -124,10 +128,10 @@ namespace arrays
         }
         static void Exercise4()
         {
-            //versão com inserção automatica dos arrays
-            var arraysD = new int[5];
-            var arraysE = new int[5];
-            var arraysF = new int[5];
+
+            var arraysD = new int[10];
+            var arraysE = new int[10];
+            var arraysF = new int[10];
 
 
             for (int i = 0; i < arraysD.Length; i++)
@@ -142,19 +146,136 @@ namespace arrays
             {
                 if (arraysE[b] == arraysF[b])
                 {
-                  Console.WriteLine($"{arraysE[b]} é igual a {arraysF[b]}") ; 
+                    Console.WriteLine($"{arraysE[b]} é igual a {arraysF[b]}");
                 }
 
                 else
                 {
-                    Console.WriteLine($"{arraysE[b]} não é igual a {arraysF[b]}") ; 
+                    Console.WriteLine($"{arraysE[b]} não é igual a {arraysF[b]}");
                 }
             }
         }
 
+
+        static void Exercise5()
+        {
+
+            var arraysD = new int[4];
+
+            double media = 0.0;
+            var smaller = 0;
+            var bigger = 0;
+
+            for (int i = 0; i < arraysD.Length; i++)
+            {
+                Console.WriteLine("Number to D: ");
+                arraysD[i] = int.Parse(Console.ReadLine());
+            }
+            for (int b = 0; b < arraysD.Length; b++)
+            {
+                media += arraysD[b];
+            }
+
+            for (int b = 0; b < arraysD.Length; b++)
+            {
+                if (arraysD[b] < media / arraysD.Length)
+                {
+                    smaller++;
+                }
+                else if (arraysD[b] > media / arraysD.Length)
+                {
+                    bigger++;
+                }
+
+            }
+
+            Console.WriteLine($" The media is {media / arraysD.Length}");
+            Console.ReadKey();
+
+            Console.WriteLine($"{smaller} numbers are below average");
+            Console.ReadKey();
+
+            Console.WriteLine($"{bigger} numbers are above average");
+            Console.ReadKey();
+
+        }
+
+        //metodo auxiliar bolha para o exercicio 6
+        public static void troca(int[] g, int first)
+        {
+            int temp;
+
+            temp = g[first];
+            g[first] = g[first + 1];
+            g[first + 1] = temp;
+        }
+        static void Exercise6()
+        {
+            // var arraysT = new int[12];
+            var arraysG = new int[5];
+            var arraysT = new int[5];
+
+
+            Console.WriteLine("Coletanto matrix T e colocando em ordem crescente");
+
+            for (int i = 0; i < arraysG.Length; i++)
+            {
+                Console.WriteLine("Números matrix G : ");
+                arraysG[i] = int.Parse(Console.ReadLine());
+            }
+
+            //Colocando matrix G em ordem crescente
+            for (int i = 1; i < arraysG.Length; i++)
+            {
+                for (int j = 0; j < arraysG.Length - 1; j++)
+                {
+                    if (arraysG[j] > arraysG[j + 1])
+                    {
+                        troca(arraysG, j);
+                    }
+                }
+            }
+
+            for (int j = 0; j < arraysG.Length; j++)
+            {
+                Console.Write($"{ arraysG[j]} ");
+            }
+
+            Console.Clear();
+            Console.WriteLine("Coletanto matrix T e colocando em ordem decrescente");
+
+            for (int i = 0; i < arraysG.Length; i++)
+            {
+                Console.WriteLine("Números matrix T : ");
+                arraysT[i] = int.Parse(Console.ReadLine());
+            }
+
+            //Colocando matrix T em ordem crescente
+            for (int i = 1; i < arraysT.Length; i++)
+            {
+                for (int j = 0; j < arraysT.Length - 1; j++)
+                {
+                    if (arraysT[j] < arraysT[j + 1])
+                    {
+                        troca(arraysT, j);
+                    }
+                }
+
+            }
+
+            for (int j = 0; j < arraysT.Length; j++)
+            {
+                Console.Write($"{ arraysT[j]} ");
+            }
+
+            //Matriz C criada para receber a soma dos elementos de T e G
+
+        }
+
+
         static void Main(string[] args)
         {
-            Exercise4();
+            Exercise6();
         }
     }
 }
