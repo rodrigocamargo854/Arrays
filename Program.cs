@@ -212,11 +212,9 @@ namespace arrays
         static void Exercise6()
         {
             // var arraysT = new int[12];
-            var arraysG = new int[2];
-            var arraysT = new int[2];
-            var arraysC = new int[2];
-
-
+            var arraysG = new int[12];
+            var arraysT = new int[12];
+            var arraysC = new int[12];
 
             Console.WriteLine("Coletanto matriz A e colocando em ordem crescente");
 
@@ -245,7 +243,6 @@ namespace arrays
 
             Console.Clear();
             Console.ReadKey();
-
             Console.WriteLine("Coletanto matriz B e colocando em ordem decrescente");
 
             for (int i = 0; i < arraysG.Length; i++)
@@ -273,7 +270,6 @@ namespace arrays
             Console.Clear();
             Console.ReadKey();
 
-
             //Matriz C criada para receber a soma dos elementos de T e G
 
             for (int j = 0; j < arraysT.Length; j++)
@@ -289,8 +285,7 @@ namespace arrays
                     {
                         troca(arraysG, j);
                     }
-                }
-               
+                }  
             }
 
              Console.Write("Matriz C em ordem Crescente");
@@ -300,9 +295,6 @@ namespace arrays
                 {
                     Console.Write($"{arraysC[j] } ");
                 }
-
-
-
         }
 
 
