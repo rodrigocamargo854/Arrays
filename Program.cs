@@ -212,15 +212,17 @@ namespace arrays
         static void Exercise6()
         {
             // var arraysT = new int[12];
-            var arraysG = new int[5];
-            var arraysT = new int[5];
+            var arraysG = new int[2];
+            var arraysT = new int[2];
+            var arraysC = new int[2];
 
 
-            Console.WriteLine("Coletanto matrix T e colocando em ordem crescente");
+
+            Console.WriteLine("Coletanto matriz A e colocando em ordem crescente");
 
             for (int i = 0; i < arraysG.Length; i++)
             {
-                Console.WriteLine("Números matrix G : ");
+                Console.WriteLine("Números matriz A : ");
                 arraysG[i] = int.Parse(Console.ReadLine());
             }
 
@@ -242,11 +244,13 @@ namespace arrays
             }
 
             Console.Clear();
-            Console.WriteLine("Coletanto matrix T e colocando em ordem decrescente");
+            Console.ReadKey();
+
+            Console.WriteLine("Coletanto matriz B e colocando em ordem decrescente");
 
             for (int i = 0; i < arraysG.Length; i++)
             {
-                Console.WriteLine("Números matrix T : ");
+                Console.WriteLine("Números matriz B : ");
                 arraysT[i] = int.Parse(Console.ReadLine());
             }
 
@@ -260,15 +264,44 @@ namespace arrays
                         troca(arraysT, j);
                     }
                 }
-
             }
 
             for (int j = 0; j < arraysT.Length; j++)
             {
                 Console.Write($"{ arraysT[j]} ");
             }
+            Console.Clear();
+            Console.ReadKey();
+
 
             //Matriz C criada para receber a soma dos elementos de T e G
+
+            for (int j = 0; j < arraysT.Length; j++)
+            {
+                arraysC[j] =  arraysG[j] - arraysT[j];
+            }
+
+             for (int i = 1; i < arraysG.Length; i++)
+            {
+                for (int j = 0; j < arraysG.Length - 1; j++)
+                {
+                    if (arraysC[j] > arraysC[j + 1])
+                    {
+                        troca(arraysG, j);
+                    }
+                }
+               
+            }
+
+             Console.Write("Matriz C em ordem Crescente");
+             Console.ReadKey();
+
+                for (int j = 0; j < arraysC.Length; j++)
+                {
+                    Console.Write($"{arraysC[j] } ");
+                }
+
+
 
         }
 
