@@ -305,10 +305,10 @@ namespace arrays
         {
             //Popule dois vetores com 10 valores cada. 
             //Após esta operação, troque o conteúdo dos vetores.
-            var arraysA = new int[6];
-            var arraysB = new int[6];
-            var tempA = new int[6];
-            var tempB = new int[6];
+            var arraysA = new int[11];
+            var arraysB = new int[11];
+            var tempA = new int[11];
+            var tempB = new int[11];
 
 
 
@@ -344,16 +344,11 @@ namespace arrays
 
             for (int i = 1; i < arraysA.Length; i++)
             {
-
                 tempB[i] = arraysB[i];
                 tempA[i] = arraysA[i];
 
                 arraysB[i] = tempA[i];
                 arraysA[i] = tempB[i];
-
-
-
-
             }
 
             Console.WriteLine("Vetor A");
@@ -372,13 +367,45 @@ namespace arrays
             }
             Console.ReadKey();
             Console.Clear();
-
-
         }
 
+        static void Lista2_Exercise2()
+        {
+            //Dado um vetor qualquer com 10 números, 
+            //faça um programa que informa se 
+            //há ou não números repetidos nesse vetor.
+
+            var arraysA = new int[11] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+            var repetidos = 0;
+
+            for (int j = arraysA.Length; j > 0; j++)
+            {
+                for (int x = 0; x < arraysA.Length - 1; x++)
+                {
+                    if (arraysA[x] == arraysA[x + 1])
+                    {
+                        repetidos++;
+                    }
+                }
+            }
+
+            if (repetidos != 0)
+            {
+                Console.WriteLine($"Há {repetidos} numeros repetidos neste vetor");
+            }
+            else
+
+            {
+                Console.WriteLine("Não há numeros repetidos neste vetor");
+            }
+        }
         static void Main(string[] args)
         {
-            Lista2_exercise1();
+            Lista2_Exercise2();
         }
     }
 }
+
+
+
+
