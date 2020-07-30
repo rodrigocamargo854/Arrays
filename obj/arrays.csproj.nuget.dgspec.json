@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\profr\\dev\\Arrays\\arrays.csproj": {}
+    "C:\\Users\\profr\\dev\\arrays\\arrays.csproj": {}
   },
   "projects": {
-    "C:\\Users\\profr\\dev\\Arrays\\arrays.csproj": {
+    "C:\\Users\\profr\\dev\\arrays\\arrays.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\profr\\dev\\Arrays\\arrays.csproj",
+        "projectUniqueName": "C:\\Users\\profr\\dev\\arrays\\arrays.csproj",
         "projectName": "arrays",
-        "projectPath": "C:\\Users\\profr\\dev\\Arrays\\arrays.csproj",
+        "projectPath": "C:\\Users\\profr\\dev\\arrays\\arrays.csproj",
         "packagesPath": "C:\\Users\\profr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\profr\\dev\\Arrays\\obj\\",
+        "outputPath": "C:\\Users\\profr\\dev\\arrays\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

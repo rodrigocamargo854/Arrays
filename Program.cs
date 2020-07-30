@@ -4,10 +4,6 @@ namespace arrays
 {
     class Program
     {
-
-
-
-
         static void Exercise1opcional()
         {
             //versão com inserção automatica dos arrays
@@ -33,7 +29,6 @@ namespace arrays
             {
                 Console.WriteLine(arraysC[c]);
             }
-
         }
 
         static void Exercise1()
@@ -63,7 +58,6 @@ namespace arrays
                 Console.WriteLine(arraysC[c]);
             }
         }
-
         static void Exercise2()
         {
             var newArray = new int[10];
@@ -133,7 +127,6 @@ namespace arrays
             var arraysE = new int[10];
             var arraysF = new int[10];
 
-
             for (int i = 0; i < arraysD.Length; i++)
             {
                 Console.WriteLine("Number to A: ");
@@ -156,10 +149,8 @@ namespace arrays
             }
         }
 
-
         static void Exercise5()
         {
-
             var arraysD = new int[4];
 
             double media = 0.0;
@@ -186,7 +177,6 @@ namespace arrays
                 {
                     bigger++;
                 }
-
             }
 
             Console.WriteLine($" The media is {media / arraysD.Length}");
@@ -227,6 +217,7 @@ namespace arrays
             //Colocando matrix G em ordem crescente
             for (int i = 1; i < arraysG.Length; i++)
             {
+                //colocamos proteção para não passar do limite do array.length
                 for (int j = 0; j < arraysG.Length - 1; j++)
                 {
                     if (arraysG[j] > arraysG[j + 1])
@@ -274,10 +265,10 @@ namespace arrays
 
             for (int j = 0; j < arraysT.Length; j++)
             {
-                arraysC[j] =  arraysG[j] - arraysT[j];
+                arraysC[j] = arraysG[j] - arraysT[j];
             }
 
-             for (int i = 1; i < arraysG.Length; i++)
+            for (int i = 1; i < arraysG.Length; i++)
             {
                 for (int j = 0; j < arraysG.Length - 1; j++)
                 {
@@ -285,22 +276,109 @@ namespace arrays
                     {
                         troca(arraysG, j);
                     }
-                }  
-            }
-
-             Console.Write("Matriz C em ordem Crescente");
-             Console.ReadKey();
-
-                for (int j = 0; j < arraysC.Length; j++)
-                {
-                    Console.Write($"{arraysC[j] } ");
                 }
+            }
+            Console.Write("Matriz C em ordem Crescente");
+            Console.ReadKey();
+
+            for (int j = 0; j < arraysC.Length; j++)
+            {
+                Console.Write($"{arraysC[j] } ");
+            }
         }
 
+        //Outra lista aleatória
+        static void Exercise7()
+        {
+            //1.  Dada uma sequencia de n números, imprimi-la 
+            // na ordem inversa à da leitura. 
+
+            var arraysA = new int[11];
+
+            for (int j = arraysA.Length - 1; j > 0; j--)
+            {
+                Console.WriteLine(j);
+            }
+        }
+        //***************************************************************************************
+        static void Lista2_exercise1()
+        {
+            //Popule dois vetores com 10 valores cada. 
+            //Após esta operação, troque o conteúdo dos vetores.
+            var arraysA = new int[6];
+            var arraysB = new int[6];
+            var tempA = new int[6];
+            var tempB = new int[6];
+
+
+
+            for (int i = 1; i < arraysA.Length; i++)
+            {
+                Console.WriteLine("Números para o vetor A : ");
+                arraysA[i] = int.Parse(Console.ReadLine());
+                Console.Clear();
+
+                Console.WriteLine("Números para o vetor B : ");
+                arraysB[i] = int.Parse(Console.ReadLine());
+                Console.Clear();
+
+            }
+            Console.WriteLine("Vetor A");
+            for (int i = 1; i < arraysA.Length; i++)
+            {
+                Console.Write($"{arraysA[i]} ");
+            }
+
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Vetor B");
+            for (int i = 1; i < arraysB.Length; i++)
+            {
+                Console.Write($"{arraysB[i]} ");
+            }
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Trocando os valores");
+
+            for (int i = 1; i < arraysA.Length; i++)
+            {
+
+                tempB[i] = arraysB[i];
+                tempA[i] = arraysA[i];
+
+                arraysB[i] = tempA[i];
+                arraysA[i] = tempB[i];
+
+
+
+
+            }
+
+            Console.WriteLine("Vetor A");
+            for (int i = 1; i < arraysA.Length; i++)
+            {
+                Console.Write($"{arraysA[i]} ");
+            }
+
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Vetor B");
+            for (int i = 1; i < arraysB.Length; i++)
+            {
+                Console.Write($"{arraysB[i]} ");
+            }
+            Console.ReadKey();
+            Console.Clear();
+
+
+        }
 
         static void Main(string[] args)
         {
-            Exercise6();
+            Lista2_exercise1();
         }
     }
 }
