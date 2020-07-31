@@ -310,8 +310,6 @@ namespace arrays
             var tempA = new int[11];
             var tempB = new int[11];
 
-
-
             for (int i = 1; i < arraysA.Length; i++)
             {
                 Console.WriteLine("Números para o vetor A : ");
@@ -345,9 +343,7 @@ namespace arrays
             for (int i = 1; i < arraysA.Length; i++)
             {
                 tempB[i] = arraysB[i];
-                tempA[i] = arraysA[i];
-
-                arraysB[i] = tempA[i];
+                arraysB[i] = arraysA[i];
                 arraysA[i] = tempB[i];
             }
 
@@ -371,19 +367,18 @@ namespace arrays
 
         static void Lista2_Exercise2()
         {
-            //Dado um vetor qualquer com 10 números, 
-            //faça um programa que informa se 
-            //há ou não números repetidos nesse vetor.
+            var arraysA = new int[11] { 1, 2, 5, 5, 87, 67, 6, 8, 9, 117, 11 };
+            var arraysIguais = new int[11];
 
-            var arraysA = new int[11] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
             var repetidos = 0;
 
-            for (int j = arraysA.Length; j > 0; j++)
+            for (int i = 1; i < arraysA.Length; i++)
             {
-                for (int x = 0; x < arraysA.Length - 1; x++)
+                for (int j = 0; j < arraysA.Length - 1; j++)
                 {
-                    if (arraysA[x] == arraysA[x + 1])
+                    if (arraysA[j] == arraysA[j + 1])
                     {
+                        arraysIguais[j] = arraysA[j];
                         repetidos++;
                     }
                 }
@@ -391,17 +386,29 @@ namespace arrays
 
             if (repetidos != 0)
             {
-                Console.WriteLine($"Há {repetidos} numeros repetidos neste vetor");
+                Console.Write($"Numeros repetidos, são ");
+                for (int j = 0; j < arraysIguais.Length - 1; j++)
+                {
+                    if (arraysIguais[j] != 0)
+                    {
+                        Console.Write($"{arraysIguais[j]} ");
+                    }
+                }
             }
-            else
 
+            else
             {
-                Console.WriteLine("Não há numeros repetidos neste vetor");
+                Console.Write($"Não há números repetidos");
+
+
             }
+
+
         }
         static void Main(string[] args)
         {
             Lista2_Exercise2();
+
         }
     }
 }
