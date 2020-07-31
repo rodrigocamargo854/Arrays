@@ -453,46 +453,59 @@ namespace arrays
             percMale = (countM * 100) / 10.0;
             percFemale = (countF * 100) / 10.0;
 
-
             Console.WriteLine($"Number of females {countF} , number of males {countM} ");
             Console.WriteLine($"Number of people who answered no:  {noCount} ");
             Console.WriteLine($"Number of people who answered yes:  {yesCount}");
             Console.WriteLine($"Percentage of female  who answered yes  {percFemale}%");
             Console.WriteLine($"Percentage of males who answered yes  {percMale}%");
-
-
-
-
-            // foreach (string i in answers)
-            // {
-            //     Console.Write($"{i} ");
-            // }
-
         }
         static void Lista2_Exercise4()
         {
-            var arraysA = new int[5] { 1, 2, 5, 0, 11 };
+            var arraysA = new int[5];
             int sumimp = 0;
-            int count = 0;
 
+            Console.WriteLine("Digite 5 números para preencher o vetor: ");
 
             for (int i = 0; i < arraysA.Length; i++)
             {
-                if (arraysA[i] % 2 != 0)
+                arraysA[i] = int.Parse(Console.ReadLine());
+            }
+
+            for (int a = 0; a < arraysA.Length; a++)
+            {
+                if (arraysA[a] % 2 != 0)
                 {
-                   sumimp += arraysA[i];        
+                    sumimp += arraysA[a];
                 }
             }
 
             Console.Write($" A soma dos números ímpares é : {sumimp}");
         }
 
+        static void Lista2_Exercise5()
+        {
+            var arraysA = new int[10]{ 1, 2, -5, 0, -111, -87, 6, 8, 9, 117 };
+            int sumPos = 0;
+           
+            for (int a = 0; a < arraysA.Length; a++)
+            {
+                if (arraysA[a] > 0)
+                {
+                    sumPos ++;
+                }
+            }
+
+            Console.Write($" A soma dos números positivos  é : {sumPos}");
+        }
+
         static void Main(string[] args)
         {
-            Lista2_Exercise4();
+          Lista2_Exercise5();      
+
         }
     }
 }
+
 
 
 
