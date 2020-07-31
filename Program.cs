@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace arrays
 {
     class Program
@@ -367,7 +367,7 @@ namespace arrays
 
         static void Lista2_Exercise2()
         {
-            var arraysA = new int[11] { 1, 2, 5, 5, 87, 67, 6, 8, 9, 117, 11 };
+            var arraysA = new int[11] { 1, 2, 5, 0, 111, 87, 6, 8, 9, 117, 11 };
             var arraysIguais = new int[11];
 
             var repetidos = 0;
@@ -386,14 +386,15 @@ namespace arrays
 
             if (repetidos != 0)
             {
-                Console.Write($"Numeros repetidos, são ");
-                for (int j = 0; j < arraysIguais.Length - 1; j++)
-                {
-                    if (arraysIguais[j] != 0)
-                    {
-                        Console.Write($"{arraysIguais[j]} ");
-                    }
-                }
+                Console.WriteLine("Este vetor possui números repetidos");
+                // Console.Write($"O número que está repetindo é o : ");
+                // for (int j = 0; j < arraysIguais.Length - 1; j++)
+                // {
+                //     if (arraysIguais[j] != 0)
+                //     {
+                //         Console.Write($"{arraysIguais[j]} ");
+                //     }
+                // }
             }
 
             else
@@ -405,9 +406,83 @@ namespace arrays
 
 
         }
+
+        static void Lista2_Exercise3()
+        {
+            List<string> sex = new List<string>();
+            List<string> answers = new List<string>();
+            int yesCount = 0;
+            int noCount = 0;
+            double malePerc = 0.0;
+            double femPerc = 0.0;
+            double countM = 0;
+            double countF = 0;
+            double percMale = 0.0;
+            double percFemale = 0.0;
+
+
+
+
+
+            for (int i = 1; i < 11; i++)
+            {
+                Console.WriteLine("Sexo: ");
+                sex.Add(Console.ReadLine());
+
+                Console.WriteLine("Answers: ");
+                answers.Add(Console.ReadLine());
+            }
+
+            foreach (string i in sex)
+            {
+                if (i == "Male" || i == "male")
+                {
+                    countM++;
+                }
+                else if (i == "female" || i == "Female")
+                {
+                    countF++;
+                }
+                
+            }
+
+            foreach (string i in answers)
+            {
+                if (i == "yes" || i == "Yes")
+                {
+                    yesCount++;
+                }
+                else if (i == "No" || i == "no")
+                {
+                    noCount++;
+                }
+
+            }
+
+            percMale = (countM * 100) / 10.0;
+            percFemale = (countF * 100) / 10.0;
+
+
+
+            Console.WriteLine($"Number of females {countF} , number of males {countM} ");
+            Console.WriteLine($"Number of people who answered no:  {noCount} ");
+            Console.WriteLine($"Number of people who answered yes:  {yesCount}");
+            Console.WriteLine($"Percentage of female  who answered yes  {percFemale}%");
+            Console.WriteLine($"Percentage of males who answered yes  {percMale}%");
+
+
+
+
+            // foreach (string i in answers)
+            // {
+            //     Console.Write($"{i} ");
+            // }
+
+        }
+
         static void Main(string[] args)
         {
-            Lista2_Exercise2();
+            Lista2_Exercise3();
 
         }
     }
