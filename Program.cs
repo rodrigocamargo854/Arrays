@@ -400,10 +400,7 @@ namespace arrays
             else
             {
                 Console.Write($"Não há números repetidos");
-
-
             }
-
 
         }
 
@@ -419,10 +416,6 @@ namespace arrays
             double countF = 0;
             double percMale = 0.0;
             double percFemale = 0.0;
-
-
-
-
 
             for (int i = 1; i < 11; i++)
             {
@@ -443,7 +436,6 @@ namespace arrays
                 {
                     countF++;
                 }
-                
             }
 
             foreach (string i in answers)
@@ -456,12 +448,10 @@ namespace arrays
                 {
                     noCount++;
                 }
-
             }
 
             percMale = (countM * 100) / 10.0;
             percFemale = (countF * 100) / 10.0;
-
 
 
             Console.WriteLine($"Number of females {countF} , number of males {countM} ");
@@ -479,11 +469,27 @@ namespace arrays
             // }
 
         }
+        static void Lista2_Exercise4()
+        {
+            var arraysA = new int[5] { 1, 2, 5, 0, 11 };
+            int sumimp = 0;
+            int count = 0;
+
+
+            for (int i = 0; i < arraysA.Length; i++)
+            {
+                if (arraysA[i] % 2 != 0)
+                {
+                   sumimp += arraysA[i];        
+                }
+            }
+
+            Console.Write($" A soma dos números ímpares é : {sumimp}");
+        }
 
         static void Main(string[] args)
         {
-            Lista2_Exercise3();
-
+            Lista2_Exercise4();
         }
     }
 }

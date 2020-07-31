@@ -132,7 +132,6 @@ $RECYCLE.BIN/
 
 _NCrunch*
 
-# pasta exclusiva para o vc
 .vscode
-.obj
 .bin
+.obj
