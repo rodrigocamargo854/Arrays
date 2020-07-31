@@ -479,29 +479,65 @@ namespace arrays
                 }
             }
 
+
+
             Console.Write($" A soma dos números ímpares é : {sumimp}");
         }
 
         static void Lista2_Exercise5()
         {
-            var arraysA = new int[10]{ 1, 2, -5, 0, -111, -87, 6, 8, 9, 117 };
+            var arraysA = new int[10] { 1, 2, -5, 0, -111, -87, 6, 8, 9, 117 };
             int sumPos = 0;
-           
+
             for (int a = 0; a < arraysA.Length; a++)
             {
                 if (arraysA[a] > 0)
                 {
-                    sumPos ++;
+                    sumPos++;
                 }
+
             }
 
             Console.Write($" A soma dos números positivos  é : {sumPos}");
         }
 
+
+        static void Lista2_Exercise6()
+        {
+            var arraysA = new int[10];
+            int sumimp = 0;
+            int numArray = 0;
+
+            Console.WriteLine("Digite 10 números para preencher o vetor: ");
+
+            for (int i = 1; i < arraysA.Length; i++)
+            {
+
+                numArray = int.Parse(Console.ReadLine());
+                if (numArray > 0)
+                {
+                    arraysA[i] = numArray;
+                }
+            }
+
+            for (int i = 1; i < arraysA.Length; i++)
+            {
+                for (int j = 0; j < arraysA.Length - 1; j++)
+                {
+                    if (arraysA[j] > arraysA[j + 1])
+                    {
+                        troca(arraysA, j);
+                    }
+                }
+            }
+
+            Console.Write($" O maior número deste vetor é : {arraysA[9]}");
+        }
+
         static void Main(string[] args)
         {
-          Lista2_Exercise5();      
 
+            Lista2_Exercise6();
         }
     }
 }
