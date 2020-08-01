@@ -613,13 +613,11 @@ namespace arrays
             string[] vogals = new string[5] { "a", "e", "i", "o", "u" };
             var countR = 0;
             // List<int> repeats = new List<int>();
-
             //pupula o vetor 
             for (var a = 0; a < letters.Length; a++)
             {
                 Console.WriteLine("Letter: ");
                 letters[a] = Console.ReadLine();
-
             }
 
             foreach (var i in letters)
@@ -630,19 +628,45 @@ namespace arrays
                     {
                         countR++;
                     }
-
                 }
-
             }
             Console.WriteLine($"The number of vogals in this arrays is {countR}");
         }
 
         //-------------Lista 2 Arrays - exercicios 9
+        static void Lista2_Exercices9()
+        {
+            string[] letters = new string[10];
+            List<string> oddSum = new List<string>();
 
+            var countR = 0;
+
+            for (var a = 0; a < letters.Length; a++)
+            {
+                Console.WriteLine("Letter: ");
+                letters[a] = Console.ReadLine();
+            }
+
+            for (int i = 0; i < letters.Length; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    oddSum.Add(letters[i]);
+                }
+            }
+
+            Console.WriteLine($"The word formade with the odds index:  ");
+            foreach (var a in oddSum)
+            {
+                Console.Write($"{a}");
+
+            }
+
+        }
 
         static void Main(string[] args)
         {
-            Lista2_Exercise8();
+            Lista2_Exercices9();
 
         }
     }

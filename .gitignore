@@ -133,5 +133,5 @@ $RECYCLE.BIN/
 _NCrunch*
 
 .vscode
-.bin
-.obj
+Aplication/src/Domain/bin/
+Aplication/src/Domain/obj/
