@@ -4,7 +4,7 @@ namespace arrays
 {
     class Program
     {
-
+        //-------------metodo auxiliar (bubble)
         public static void troca(int[] g, int first)
         {
             int temp;
@@ -311,7 +311,9 @@ namespace arrays
                 Console.WriteLine(j);
             }
         }
-        //***************************************************************************************
+
+
+        //-------------Lista 2 Arrays - exercicios 1
         static void Lista2_exercise1()
         {
             //Popule dois vetores com 10 valores cada. 
@@ -376,6 +378,10 @@ namespace arrays
             Console.Clear();
         }
 
+
+
+        //-------------Lista 2 Arrays - exercicios 2
+
         static void Lista2_Exercise2()
         {
             var arraysA = new int[11] { 1, 2, 5, 0, 111, 87, 6, 8, 9, 117, 11 };
@@ -414,6 +420,9 @@ namespace arrays
             }
 
         }
+
+
+        //-------------Lista 2 Arrays - exercicios 3
 
         static void Lista2_Exercise3()
         {
@@ -470,6 +479,10 @@ namespace arrays
             Console.WriteLine($"Percentage of female  who answered yes  {percFemale}%");
             Console.WriteLine($"Percentage of males who answered yes  {percMale}%");
         }
+
+
+        //-------------Lista 2 Arrays - exercicios 4
+
         static void Lista2_Exercise4()
         {
             var arraysA = new int[5];
@@ -495,6 +508,8 @@ namespace arrays
             Console.Write($" A soma dos números ímpares é : {sumimp}");
         }
 
+        //-------------Lista 2 Arrays - exercicios 5
+
         static void Lista2_Exercise5()
         {
             var arraysA = new int[10] { 1, 2, -5, 0, -111, -87, 6, 8, 9, 117 };
@@ -513,6 +528,9 @@ namespace arrays
         }
 
 
+
+        //-------------Lista 2 Arrays - exercicios 6
+
         static void Lista2_Exercise6()
         {
             var arraysA = new int[11];
@@ -523,7 +541,6 @@ namespace arrays
 
             for (int i = 1; i < arraysA.Length; i++)
             {
-                Console.WriteLine("Digit: ");
                 numArray = int.Parse(Console.ReadLine());
                 if (numArray > 0)
                 {
@@ -545,6 +562,9 @@ namespace arrays
             Console.Write($" O maior número deste vetor é : {arraysA[10]}");
         }
 
+
+        //-------------Lista 2 Arrays - exercicios 7
+
         static void Lista2_Exercise7()
         {
             var arraysA = new int[10];
@@ -554,11 +574,12 @@ namespace arrays
 
             for (int a = 0; a < arraysA.Length; a++)
             {
+                Console.WriteLine("Digit: ");
                 arraysA[a] = int.Parse(Console.ReadLine());
                 if (arraysA[a] == a)
                 {
                     numb++;
-                    repeats.Add(arraysA[a] );
+                    repeats.Add(arraysA[a]);
                 }
 
             }
@@ -583,10 +604,45 @@ namespace arrays
 
         }
 
+        //-------------Lista 2 Arrays - exercicios 8
+
+
+        static void Lista2_Exercise8()
+        {
+            string[] letters = new string[10];
+            string[] vogals = new string[5] { "a", "e", "i", "o", "u" };
+            var countR = 0;
+            // List<int> repeats = new List<int>();
+
+            //pupula o vetor 
+            for (var a = 0; a < letters.Length; a++)
+            {
+                Console.WriteLine("Letter: ");
+                letters[a] = Console.ReadLine();
+
+            }
+
+            foreach (var i in letters)
+            {
+                foreach (var a in vogals)
+                {
+                    if (i == a)
+                    {
+                        countR++;
+                    }
+
+                }
+
+            }
+            Console.WriteLine($"The number of vogals in this arrays is {countR}");
+        }
+
+        //-------------Lista 2 Arrays - exercicios 9
+
 
         static void Main(string[] args)
-        {   
-           Lista2_Exercise7(); 
+        {
+            Lista2_Exercise8();
 
         }
     }
