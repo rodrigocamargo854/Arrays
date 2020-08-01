@@ -4,6 +4,22 @@ namespace arrays
 {
     class Program
     {
+
+        public static void troca(int[] g, int first)
+        {
+            int temp;
+
+            temp = g[first];
+            g[first] = g[first + 1];
+            g[first + 1] = temp;
+        }
+
+
+
+
+
+
+
         static void Exercise1opcional()
         {
             //versão com inserção automatica dos arrays
@@ -191,14 +207,9 @@ namespace arrays
         }
 
         //metodo auxiliar bolha para o exercicio 6
-        public static void troca(int[] g, int first)
-        {
-            int temp;
 
-            temp = g[first];
-            g[first] = g[first + 1];
-            g[first + 1] = temp;
-        }
+
+
         static void Exercise6()
         {
             // var arraysT = new int[12];
@@ -504,7 +515,7 @@ namespace arrays
 
         static void Lista2_Exercise6()
         {
-            var arraysA = new int[10];
+            var arraysA = new int[11];
             int sumimp = 0;
             int numArray = 0;
 
@@ -512,7 +523,7 @@ namespace arrays
 
             for (int i = 1; i < arraysA.Length; i++)
             {
-
+                Console.WriteLine("Digit: ");
                 numArray = int.Parse(Console.ReadLine());
                 if (numArray > 0)
                 {
@@ -531,13 +542,52 @@ namespace arrays
                 }
             }
 
-            Console.Write($" O maior número deste vetor é : {arraysA[9]}");
+            Console.Write($" O maior número deste vetor é : {arraysA[10]}");
         }
 
-        static void Main(string[] args)
+        static void Lista2_Exercise7()
         {
+            var arraysA = new int[10];
+            var arraysC = new int[10];
+            List<int> repeats = new List<int>();
+            int numb = 0;
 
-            Lista2_Exercise6();
+            for (int a = 0; a < arraysA.Length; a++)
+            {
+                arraysA[a] = int.Parse(Console.ReadLine());
+                if (arraysA[a] == a)
+                {
+                    numb++;
+                    repeats.Add(arraysA[a] );
+                }
+
+            }
+
+            if (numb == 0)
+            {
+                Console.WriteLine("THERE ARE NO NUMBERS IN YOUR INDEX");
+            }
+
+            else
+            {
+                Console.WriteLine($"The numbers of digits repeat in the same position of your index is { numb} ");
+                Console.Write($"The numbers are:  ");
+
+                foreach (int i in repeats)
+                {
+
+                    Console.Write($" {repeats[i]}");
+
+                }
+            }
+
+        }
+
+
+        static void Main(string[] args)
+        {   
+           Lista2_Exercise7(); 
+
         }
     }
 }
