@@ -464,14 +464,14 @@ namespace arrays
 
             static void Lista2_Exercise3()
             {
-                var n = 3;
+                var n = 2;
                 Arrays[] vect = new Arrays[n];
                 int yesCount = 0;
                 int noCount = 0;
                 double countM = 0;
                 double countF = 0;
 
-                for (int i = 1; i < n; i++)
+                for (int i = 0; i < n; i++)
 
                 {
 
@@ -490,15 +490,15 @@ namespace arrays
                     {
                         countM++;
                     }
-                    else if (verifyF)
+                    if (verifyF)
                     {
                         countF++;
                     }
-                    else if (verifyAyes)
+                    if (verifyAyes)
                     {
                         yesCount++;
                     }
-                    else if (verifyAno)
+                    if (verifyAno)
                     {
                         noCount++;
                     }
@@ -506,8 +506,8 @@ namespace arrays
 
                 Console.WriteLine($"Número de pessoas que disseram sim:  {yesCount}");
                 Console.WriteLine($"Número de pessoas que disseram não  {noCount} ");
-                Console.WriteLine($"Percentual de mulheres que disseram sim  {(countF * 100) / 10.0}%");
-                Console.WriteLine($"Percentual de homens que disseram não  {(countM * 100) / 10.0}%");
+                Console.WriteLine($"Percentual de mulheres que disseram sim  {(countF * 100) / yesCount}%");
+                Console.WriteLine($"Percentual de homens que disseram não  {(countM * 100) / noCount}%");
 
             }
 
