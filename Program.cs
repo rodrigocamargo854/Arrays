@@ -21,6 +21,10 @@ namespace arrays
 
             public double Array3 { get; set; }
 
+            public string Array4 { get; set; }
+            public string Array5 { get; set; }
+
+
             public Arrays(double arrayA, double arrayB)
             {
                 Array1 = arrayA;
@@ -30,6 +34,12 @@ namespace arrays
             {
                 Array1 = arrayA;
 
+            }
+
+            public Arrays(string arrayS, string arrayT)
+            {
+                Array4 = arrayS;
+                Array5 = arrayT;
             }
 
             static void Exercise1opcional()
@@ -415,6 +425,8 @@ namespace arrays
 
 
             //-------------Lista 2 Arrays - exercicios 2
+            // Dado um vetor qualquer com 10 números, faça um 
+            // programa que informa se há ou não números repetidos nesse vetor.
 
             static void Lista2_Exercise2()
             {
@@ -429,7 +441,6 @@ namespace arrays
                     {
                         if (arraysA[j] == arraysA[j + 1])
                         {
-                            arraysIguais[j] = arraysA[j];
                             repetidos++;
                         }
                     }
@@ -437,68 +448,68 @@ namespace arrays
 
                 string repeat = " Este vetor ";
                 repeat += repetidos != 0 ? " possui números repetidos" : " Não possui números repetidos";
-                Console.WriteLine(repeat);
             }
 
 
             //-------------Lista 2 Arrays - exercicios 3
+            //  Um certa empresa fez uma pesquisa para saber se as pessoas gostaram
+            //   ou não de um novo produto lançado no mercado. Para isso, forneceu-se o 
+            //   sexo do entrevistado e a sua resposta (sim ou não). Sabendo-se que foram 
+            //   entrevistadas 10 pessoas, fazer um algoritmo que calcule e escreva:
+            // • O número de pessoas que responderam sim;
+            // • O número de pessoas que responderam não;
+            // • A percentagem de pessoas do sexo feminino que responderam sim;
+            // • A percentagem de pessoas do sexo masculino que responderam não;
+
 
             static void Lista2_Exercise3()
             {
-                List<string> sex = new List<string>();
-                List<string> answers = new List<string>();
+                var n = 3;
+                Arrays[] vect = new Arrays[n];
                 int yesCount = 0;
                 int noCount = 0;
-                double malePerc = 0.0;
-                double femPerc = 0.0;
                 double countM = 0;
                 double countF = 0;
-                double percMale = 0.0;
-                double percFemale = 0.0;
 
-                for (int i = 1; i < 11; i++)
+                for (int i = 1; i < n; i++)
+
                 {
+
                     Console.WriteLine("Sexo: ");
-                    sex.Add(Console.ReadLine());
+                    string sex = (Console.ReadLine());
+                    Console.WriteLine("Resposta: ");
+                    string resp = (Console.ReadLine());
+                    vect[i] = new Arrays(sex, resp);
 
-                    Console.WriteLine("Answers: ");
-                    answers.Add(Console.ReadLine());
-                }
+                    bool verifyM = vect[i].Array4 == "masculino";
+                    bool verifyF = vect[i].Array4 == "feminino";
+                    bool verifyAyes = vect[i].Array5 == "sim";
+                    bool verifyAno = vect[i].Array5 == "não";
 
-                foreach (string i in sex)
-                {
-                    if (i == "Male" || i == "male")
+                    if (verifyM)
                     {
                         countM++;
                     }
-                    else if (i == "female" || i == "Female")
+                    else if (verifyF)
                     {
                         countF++;
                     }
-                }
-
-                foreach (string i in answers)
-                {
-                    if (i == "yes" || i == "Yes")
+                    else if (verifyAyes)
                     {
                         yesCount++;
                     }
-                    else if (i == "No" || i == "no")
+                    else if (verifyAno)
                     {
                         noCount++;
                     }
                 }
 
-                percMale = (countM * 100) / 10.0;
-                percFemale = (countF * 100) / 10.0;
+                Console.WriteLine($"Número de pessoas que disseram sim:  {yesCount}");
+                Console.WriteLine($"Número de pessoas que disseram não  {noCount} ");
+                Console.WriteLine($"Percentual de mulheres que disseram sim  {(countF * 100) / 10.0}%");
+                Console.WriteLine($"Percentual de homens que disseram não  {(countM * 100) / 10.0}%");
 
-                Console.WriteLine($"Number of females {countF} , number of males {countM} ");
-                Console.WriteLine($"Number of people who answered no:  {noCount} ");
-                Console.WriteLine($"Number of people who answered yes:  {yesCount}");
-                Console.WriteLine($"Percentage of female  who answered yes  {percFemale}%");
-                Console.WriteLine($"Percentage of males who answered yes  {percMale}%");
             }
-
 
             //-------------Lista 2 Arrays - exercicios 4
 
@@ -551,9 +562,7 @@ namespace arrays
             static void Lista2_Exercise6()
             {
                 var arraysA = new int[11];
-                int sumimp = 0;
                 int numArray = 0;
-
                 Console.WriteLine("Digite 10 números para preencher o vetor: ");
 
                 for (int i = 1; i < arraysA.Length; i++)
@@ -681,8 +690,9 @@ namespace arrays
 
             static void Main(string[] args)
             {
-                Lista2_exercise1() ;
-             }
+                Lista2_Exercise3();
+
+            }
         }
     }
 }
