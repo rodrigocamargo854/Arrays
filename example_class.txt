@@ -1,0 +1,52 @@
+using System;
+using System.Globalization;
+
+namespace C__udemy
+{
+    class Product
+    {
+        public string Name { get; set; }
+        public double Price { get; set; }
+
+        public Product(string name, double price)
+        {
+            Name = name;
+            Price = price;
+        }
+
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double media = 0.0;
+            Console.WriteLine("Digite a quantidade  de produtos: ");
+            int qnt = int.Parse(Console.ReadLine());
+
+            //Para criar o vetor é necessário dizer o tipo do vetor
+            //Iremos criar um vetor da classe Production
+
+            Product[] vect = new Product[qnt];
+
+            for (int i = 0; i < qnt; i++)
+            {
+                Console.Write("nome do Produto ");
+                string name = Console.ReadLine();
+                Console.Write("preço do produto: ");
+                double price = double.Parse(Console.ReadLine());
+                vect[i] = new Product(name, price);
+            }
+
+            double sum = 0.0;
+            for (int j = 0; j < vect.Length; j++)
+            {
+                sum += vect[j].Price;
+            }
+
+            Console.WriteLine($"A média de preços dos produtos é { (sum/qnt).ToString("f2")}");
+
+        }
+
+    }
+}
