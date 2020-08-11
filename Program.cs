@@ -512,7 +512,10 @@ namespace arrays
             }
 
             //-------------Lista 2 Arrays - exercicios 4
-
+            //  Desenvolver um programa que efetue a 
+            //  leitura de cinco elementos de uma matriz  
+            //A do tipo vetor. No final, apresente
+            //   o total da soma de todos os elementos  que sejam impares.
             static void Lista2_Exercise4()
             {
                 var j = 5;
@@ -538,7 +541,7 @@ namespace arrays
             }
 
             //-------------Lista 2 Arrays - exercicios 5
-
+            // Contar quantos valores de um vetor de 10 posições são positivos.
             static void Lista2_Exercise5()
             {
                 var arraysA = new int[10] { 1, 2, -5, 0, -111, -87, 6, 8, 9, 117 };
@@ -558,7 +561,9 @@ namespace arrays
 
 
             //-------------Lista 2 Arrays - exercicios 6
-
+            // Ler um vetor de 10 posições (aceitar somente números positivos). 
+            // Escrever a seguir o valor do maior elemento de Q e a respectiva
+            //  posição que ele ocupa no vetor
             static void Lista2_Exercise6()
             {
                 var arraysA = new int[11];
@@ -590,22 +595,27 @@ namespace arrays
 
 
             //-------------Lista 2 Arrays - exercicios 7
-
+// Crie e popule um vetor A e imprima na tela o número de vezes que existe um número
+//  residindo na mesma posição do vetor que seu valor numérico.
             static void Lista2_Exercise7()
             {
-                var arraysA = new int[10];
-                var arraysC = new int[10];
-                List<int> repeats = new List<int>();
+                var c = 4;
+                Arrays[] vect = new Arrays[c];
+                // var arraysA = new int[10];
+                // var arraysC = new int[10];
+                List<double> repeats = new List<double>();
                 int numb = 0;
 
-                for (int a = 0; a < arraysA.Length; a++)
+                for (int a = 0; a < c; a++)
                 {
                     Console.WriteLine("Digit: ");
-                    arraysA[a] = int.Parse(Console.ReadLine());
-                    if (arraysA[a] == a)
+                    double num = double.Parse(Console.ReadLine());
+                    vect[a] =  new Arrays(num);
+
+                    if (vect[a].Array1 == a)
                     {
                         numb++;
-                        repeats.Add(arraysA[a]);
+                        repeats.Add(vect[a].Array1);
                     }
                 }
 
