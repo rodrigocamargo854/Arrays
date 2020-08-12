@@ -77,12 +77,29 @@ namespace arrays
 
                 for (int i = 0; i < c; i++)
                 {
-                    Console.WriteLine($"number for A:  ");
-                    double arraysA = Double.Parse(Console.ReadLine());
-                    Console.WriteLine($"number for B:  ");
-                    double arraysB = Double.Parse(Console.ReadLine());
 
-                    vect[i] = new Arrays(arraysA, arraysB);
+                    while (true)
+                    {
+                        try
+                        {
+                            Console.WriteLine($"number for A:  ");
+                            double arraysA = Double.Parse(Console.ReadLine());
+                            Console.WriteLine($"number for B:  ");
+                            double arraysB = Double.Parse(Console.ReadLine());
+
+                            vect[i] = new Arrays(arraysA, arraysB);
+                            break;
+
+                        }
+                        catch (System.Exception)
+                        {
+
+                            Console.WriteLine("Digite somente números ");
+                        }
+
+
+                    }
+
                 }
 
                 Console.WriteLine("Vetor C");
@@ -96,18 +113,29 @@ namespace arrays
 
             }
 
-            // 2-Ler um array com 10 inteiros e mostrar os números na 
-            // ordem direta e inversa a que foram lidos
+
             static void Exercise2()
             {
-                var c = 10;
+                var c = 3;
                 var newArray = new int[c];
 
                 for (int i = 0; i < c; i++)
                 {
                     Console.WriteLine($"number:  ");
-                    newArray[i] = int.Parse(Console.ReadLine());
-                    Console.Clear();
+
+                    while (true)
+                    {
+                        try
+                        {
+                            newArray[i] = int.Parse(Console.ReadLine());
+                            Console.Clear();
+                            break;
+                        }
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("Digite um número por favor");
+                        }
+                    }
                 }
 
                 Console.WriteLine("Número em ordem direta");
@@ -119,32 +147,40 @@ namespace arrays
                     Console.Write($"{x} ");
                 }
 
-                Console.ReadKey();
                 Console.WriteLine("Números em ordem inversa");
                 Console.ReadKey();
                 Console.Clear();
 
-                for (int a = newArray.Length; a > 0; a--)
+                for (int a = c; a > 0; a--)
                 {
-                    Console.Write($"{a} ");
+                    Console.Write($"{newArray[a]} ");
                 }
             }
-            // 3-Leia 10 elementos e armazene em um array A. 
-            // Em seguida, solicite pelo teclado um número qualquer e pesquise no array se o número existe. Caso, seja verdade imprima a 
-            // mensagem: “O número existe no array” , caso contrário “Número inexistente”.       
+
             static void Exercise3()
             {
                 var c = 5;
                 Arrays[] vect = new Arrays[c];
                 var newArrays = new double[c];
 
-
                 for (int i = 1; i < c; i++)
                 {
-                    Console.Write($"{i}º number:  ");
-                    double nb = double.Parse(Console.ReadLine());
-                    vect[i] = new Arrays(nb);
-                    Console.Clear();
+
+                    while (true)
+                    {
+                        try
+                        {
+                            Console.Write($"{i}º number:  ");
+                            double nb = double.Parse(Console.ReadLine());
+                            vect[i] = new Arrays(nb);
+                            Console.Clear();
+                        }
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("Digite um número por favor");
+                        }
+                    }
+
                 }
 
                 Console.WriteLine("Digite um número: ");
@@ -164,21 +200,32 @@ namespace arrays
                 Console.WriteLine(resultado);
             }
 
-            // 4-Leia dois arrays A e B com 10 elementos.  
-            // Em seguida, compare os arrays e verifique
-            //  se os mesmos são iguais ou diferentes.
             static void Exercise4()
             {
+                double nbA = 0.0;
+                double nbB = 0.0;
                 var c = 4;
                 Arrays[] vect = new Arrays[c];
                 var newArrays = new double[c];
 
                 for (int i = 1; i < c; i++)
                 {
-                    Console.Write($"{i}º number for A:  ");
-                    double nbA = double.Parse(Console.ReadLine());
-                    Console.Write($"{i}º number for B:  ");
-                    double nbB = double.Parse(Console.ReadLine());
+                    while (true)
+                    {
+                        try
+                        {
+                            Console.Write($"{i}º number for A:  ");
+                            nbA = double.Parse(Console.ReadLine());
+                            Console.Write($"{i}º number for B:  ");
+                            nbB = double.Parse(Console.ReadLine());
+                            break;
+                        }
+
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("Digite um número por favor");
+                        }
+                    }
 
                     vect[i] = new Arrays(nbA, nbB);
                     Console.Clear();
@@ -192,10 +239,7 @@ namespace arrays
                 }
 
             }
-            //  5-Leia um array A com 15 elementos, 
-            //  e calcule a média aritmética dos 
-            //  mesmos, em seguida, diga quantos
-            //   dos elementos lidos estão abaixo, acima e na média.
+
             static void Exercise5()
             {
                 int value = 15;
@@ -209,8 +253,20 @@ namespace arrays
                 for (int i = 0; i < value; i++)
                 {
                     Console.WriteLine("Number to D: ");
-                    arraysD[i] = int.Parse(Console.ReadLine());
-                    media += arraysD[i];
+
+                    while (true)
+                    {
+                        try
+                        {
+                            arraysD[i] = int.Parse(Console.ReadLine());
+                            media += arraysD[i];
+                        }
+
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("Digite um número por favor");
+                        }
+                    }
                 }
 
                 for (int b = 0; b < arraysD.Length; b++)
@@ -236,21 +292,6 @@ namespace arrays
 
             }
 
-            //metodo auxiliar bolha para o exercicio 6
-
-            // 6-Leia um array 
-            // A com 12 elementos.
-            //  Após sua leitura, 
-            //  colocar os seus elementos em
-            // ordem crescente.
-            //  Depois ler um array
-            //   B também com doze elementos,
-            //    colocar os elementos de B em 
-            //    ordem decrescente. Construir 
-            //    um array C, onde cada elemento 
-            //    de C é a soma do elemento correspondente
-            //     de A com b. Colocar em ordem crescente a matriz
-            // C e apresentar os seus valores.
 
 
             static void Exercise6()
@@ -264,8 +305,20 @@ namespace arrays
 
                 for (int i = 0; i < c; i++)
                 {
-                    Console.WriteLine("Números matriz A : ");
-                    arraysG[i] = int.Parse(Console.ReadLine());
+                    while (true)
+                    {
+                        try
+                        {
+                            Console.WriteLine("Números matriz A : ");
+                            arraysG[i] = int.Parse(Console.ReadLine());
+
+
+                        }
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("Digite um número por favor");
+                        }
+                    }
                 }
 
                 //Colocando matrix G em ordem crescente
@@ -343,8 +396,7 @@ namespace arrays
 
             static void Exercise7()
             {
-                //1.  Dada uma sequencia de n números, imprimi-la 
-                // na ordem inversa à da leitura. 
+
 
                 var arraysA = new int[5] { 5, 4, 6, 3, 2 };
 
@@ -358,8 +410,7 @@ namespace arrays
             //-------------Lista 2 Arrays - exercicios 1
             static void Lista2_exercise1()
             {
-                //Popule dois vetores com 10 valores cada. 
-                //Após esta operação, troque o conteúdo dos vetores.
+
                 var c = 4;
                 Arrays[] vect = new Arrays[c];
                 var tempA = new double[c];
@@ -367,13 +418,25 @@ namespace arrays
 
                 for (int i = 1; i < c; i++)
                 {
-                    Console.WriteLine("Números para o vetor A : ");
-                    double valor1 = double.Parse(Console.ReadLine());
-                    Console.Clear();
-                    Console.WriteLine("Números para o vetor B : ");
-                    double valor2 = double.Parse(Console.ReadLine());
-                    Console.Clear();
-                    vect[i] = new Arrays(valor1, valor2);
+                    while (true)
+                    {
+                        try
+                        {
+                            Console.WriteLine("Números para o vetor A : ");
+                            double valor1 = double.Parse(Console.ReadLine());
+                            Console.Clear();
+                            Console.WriteLine("Números para o vetor B : ");
+                            double valor2 = double.Parse(Console.ReadLine());
+                            Console.Clear();
+                            vect[i] = new Arrays(valor1, valor2);
+                            break;
+                        }
+
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("Digite um número por favor");
+                        }
+                    }
 
                 }
 
@@ -425,8 +488,7 @@ namespace arrays
 
 
             //-------------Lista 2 Arrays - exercicios 2
-            // Dado um vetor qualquer com 10 números, faça um 
-            // programa que informa se há ou não números repetidos nesse vetor.
+
 
             static void Lista2_Exercise2()
             {
@@ -445,21 +507,12 @@ namespace arrays
                         }
                     }
                 }
-
                 string repeat = " Este vetor ";
                 repeat += repetidos != 0 ? " possui números repetidos" : " Não possui números repetidos";
             }
 
-
             //-------------Lista 2 Arrays - exercicios 3
-            //  Um certa empresa fez uma pesquisa para saber se as pessoas gostaram
-            //   ou não de um novo produto lançado no mercado. Para isso, forneceu-se o 
-            //   sexo do entrevistado e a sua resposta (sim ou não). Sabendo-se que foram 
-            //   entrevistadas 10 pessoas, fazer um algoritmo que calcule e escreva:
-            // • O número de pessoas que responderam sim;
-            // • O número de pessoas que responderam não;
-            // • A percentagem de pessoas do sexo feminino que responderam sim;
-            // • A percentagem de pessoas do sexo masculino que responderam não;
+
 
 
             static void Lista2_Exercise3()
@@ -506,34 +559,50 @@ namespace arrays
 
                 Console.WriteLine($"Número de pessoas que disseram sim:  {yesCount}");
                 Console.WriteLine($"Número de pessoas que disseram não  {noCount} ");
-                Console.WriteLine($"Percentual de mulheres que disseram sim  {(countF * 100) / yesCount}%");
-                Console.WriteLine($"Percentual de homens que disseram não  {(countM * 100) / noCount}%");
+                var man = " Porcentagem de homens  ";
+                var women = " Porcentagem de mulheres  ";
+                women += countF != 0 ? $" que disseram sim  {(countF * 100) / yesCount}%" : "Sem valores ";
+                Console.WriteLine(women);
+                man += countM != 0 ? $" que disseram não  {(countM * 100) / noCount}%" : "Sem valores ";
+                Console.WriteLine(man);
 
             }
 
+
             //-------------Lista 2 Arrays - exercicios 4
-            //  Desenvolver um programa que efetue a 
-            //  leitura de cinco elementos de uma matriz  
-            //A do tipo vetor. No final, apresente
-            //   o total da soma de todos os elementos  que sejam impares.
+
             static void Lista2_Exercise4()
             {
                 var j = 5;
-                var arraysA = new int[j];
-                int sumimp = 0;
+                Arrays[] vect = new Arrays[j];
+                double sumimp = 0;
 
                 Console.WriteLine("Digite 5 números para preencher o vetor: ");
 
                 for (int i = 0; i < j; i++)
                 {
-                    arraysA[i] = int.Parse(Console.ReadLine());
+                    while (true)
+                    {
+                        try
+                        {
+                            double elem = double.Parse(Console.ReadLine());
+                            vect[i] = new Arrays(elem);
+                            break;
+
+                        }
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("Digite um número por favor");
+                        }
+                    }
+
                 }
 
-                for (int a = 0; a < arraysA.Length; a++)
+                for (int a = 0; a < j; a++)
                 {
-                    if (arraysA[a] % 2 != 0)
+                    if (vect[a].Array1 % 2 != 0)
                     {
-                        sumimp += arraysA[a];
+                        sumimp += vect[a].Array1;
                     }
                 }
 
@@ -541,7 +610,7 @@ namespace arrays
             }
 
             //-------------Lista 2 Arrays - exercicios 5
-            // Contar quantos valores de um vetor de 10 posições são positivos.
+
             static void Lista2_Exercise5()
             {
                 var arraysA = new int[10] { 1, 2, -5, 0, -111, -87, 6, 8, 9, 117 };
@@ -561,9 +630,7 @@ namespace arrays
 
 
             //-------------Lista 2 Arrays - exercicios 6
-            // Ler um vetor de 10 posições (aceitar somente números positivos). 
-            // Escrever a seguir o valor do maior elemento de Q e a respectiva
-            //  posição que ele ocupa no vetor
+
             static void Lista2_Exercise6()
             {
                 var arraysA = new int[11];
@@ -572,11 +639,26 @@ namespace arrays
 
                 for (int i = 1; i < arraysA.Length; i++)
                 {
-                    numArray = int.Parse(Console.ReadLine());
-                    if (numArray > 0)
+                    while (true)
                     {
-                        arraysA[i] = numArray;
+                        try
+                        {
+
+                            numArray = int.Parse(Console.ReadLine());
+                            if (numArray > 0)
+                            {
+                                arraysA[i] = numArray;
+                            }
+                            break;
+
+                        }
+                        catch (System.Exception)
+                        {
+
+                            Console.WriteLine("Digite um número por favor! ");
+                        }
                     }
+
                 }
 
                 for (int i = 1; i < arraysA.Length; i++)
@@ -595,8 +677,7 @@ namespace arrays
 
 
             //-------------Lista 2 Arrays - exercicios 7
-// Crie e popule um vetor A e imprima na tela o número de vezes que existe um número
-//  residindo na mesma posição do vetor que seu valor numérico.
+
             static void Lista2_Exercise7()
             {
                 var c = 4;
@@ -610,7 +691,7 @@ namespace arrays
                 {
                     Console.WriteLine("Digit: ");
                     double num = double.Parse(Console.ReadLine());
-                    vect[a] =  new Arrays(num);
+                    vect[a] = new Arrays(num);
 
                     if (vect[a].Array1 == a)
                     {
@@ -701,7 +782,6 @@ namespace arrays
             static void Main(string[] args)
             {
                 Lista2_Exercise3();
-
             }
         }
     }
