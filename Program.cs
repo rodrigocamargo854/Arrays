@@ -41,6 +41,11 @@ namespace arrays
                 Array4 = arrayS;
                 Array5 = arrayT;
             }
+              public Arrays(string arrayS)
+            {
+                Array4 = arrayS;
+                
+            }
 
             static void Exercise1opcional()
             {
@@ -311,8 +316,6 @@ namespace arrays
                         {
                             Console.WriteLine("Números matriz A : ");
                             arraysG[i] = int.Parse(Console.ReadLine());
-
-
                         }
                         catch (System.Exception)
                         {
@@ -689,15 +692,29 @@ namespace arrays
 
                 for (int a = 0; a < c; a++)
                 {
-                    Console.WriteLine("Digit: ");
-                    double num = double.Parse(Console.ReadLine());
-                    vect[a] = new Arrays(num);
-
-                    if (vect[a].Array1 == a)
+                    while (true)
                     {
-                        numb++;
-                        repeats.Add(vect[a].Array1);
+
+                        try
+                        {
+                            Console.WriteLine("Digit: ");
+                            double num = double.Parse(Console.ReadLine());
+                            vect[a] = new Arrays(num);
+
+                            if (vect[a].Array1 == a)
+                            {
+                                numb++;
+                                repeats.Add(vect[a].Array1);
+                            }
+                            break;
+
+                        }
+                        catch (System.Exception)
+                        {
+
+                            Console.WriteLine("Digite números por favor ") ;                       }
                     }
+
                 }
 
                 if (numb == 0)
@@ -732,8 +749,21 @@ namespace arrays
                 //pupula o vetor 
                 for (var a = 0; a < 10; a++)
                 {
-                    Console.WriteLine("Letter: ");
-                    letters[a] = Console.ReadLine();
+
+                    while (true)
+                    {
+                        try
+                        {
+                            Console.WriteLine("Letter: ");
+                            letters[a] = Console.ReadLine();
+                            break;
+                        }
+                        catch (System.Exception)
+                        {
+                         Console.WriteLine("Dígitos numéricos por favor! ");
+                        }
+                    }
+
                 }
 
                 foreach (var i in letters)
@@ -752,36 +782,37 @@ namespace arrays
             //-------------Lista 2 Arrays - exercicios 9
             static void Lista2_Exercices9()
             {
-                string[] letters = new string[10];
-                List<string> oddSum = new List<string>();
+                // string[] letters = new string[10];
+                // List<string> oddSum = new List<string>();
+                var d = 4;
+                Arrays[] vect = new Arrays[d];
 
-                var countR = 0;
-
-                for (var a = 0; a < letters.Length; a++)
+                for (var i = 0; i < d; i++)
                 {
                     Console.WriteLine("Letter: ");
-                    letters[a] = Console.ReadLine();
-                }
-
-                for (int i = 0; i < letters.Length; i++)
-                {
-                    if (i % 2 != 0)
+                    string letters= Console.ReadLine();
+                    
+                     if (i % 2 != 0)
                     {
-                        oddSum.Add(letters[i]);
+                        vect[i] = new Arrays(letters);
+                    
                     }
                 }
 
+               
+
                 Console.WriteLine($"The word formade with the odds index:  ");
-                foreach (var a in oddSum)
+
+                for (var i = 0; i < vect.Length ; i++)
                 {
-                    Console.Write($"{a}");
+                    Console.Write($"{ vect[i] }");
                 }
 
             }
 
             static void Main(string[] args)
             {
-                Lista2_Exercise3();
+                Lista2_Exercices9();
             }
         }
     }
