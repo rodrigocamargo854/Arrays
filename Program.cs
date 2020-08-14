@@ -1,55 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
+
 namespace arrays
 {
     class Program
     {
-        //-------------metodo auxiliar (bubble)
-        public static void troca(int[] g, int first)
-        {
-            int temp;
-
-            temp = g[first];
-            g[first] = g[first + 1];
-            g[first + 1] = temp;
-        }
-
-        class Arrays
-        {
-            public double Array1 { get; set; }
-            public double Array2 { get; set; }
-
-            public double Array3 { get; set; }
-
-            public string Array4 { get; set; }
-            public string Array5 { get; set; }
-
-
-            public Arrays(double arrayA, double arrayB)
+            private static void troca(int[] g, int first)
             {
-                Array1 = arrayA;
-                Array2 = arrayB;
-            }
-            public Arrays(double arrayA)
-            {
-                Array1 = arrayA;
+                int temp;
 
-            }
-
-            public Arrays(string arrayS, string arrayT)
-            {
-                Array4 = arrayS;
-                Array5 = arrayT;
-            }
-              public Arrays(string arrayS)
-            {
-                Array4 = arrayS;
-                
+                temp = g[first];
+                g[first] = g[first + 1];
+                g[first + 1] = temp;
             }
 
             static void Exercise1opcional()
             {
                 //versão com inserção automatica dos arrays
+
+
                 var arraysA = new int[15];
                 var arraysB = new int[15];
                 var arraysC = new int[15];
@@ -69,7 +39,6 @@ namespace arrays
                     Console.WriteLine(arraysC[c]);
                 }
             }
-
             static void Exercise1()
             {
                 //1-Leia dois arrays A e B com 15 elementos. Construir um array C, onde
@@ -82,7 +51,6 @@ namespace arrays
 
                 for (int i = 0; i < c; i++)
                 {
-
                     while (true)
                     {
                         try
@@ -94,14 +62,12 @@ namespace arrays
 
                             vect[i] = new Arrays(arraysA, arraysB);
                             break;
-
                         }
                         catch (System.Exception)
                         {
 
                             Console.WriteLine("Digite somente números ");
                         }
-
 
                     }
 
@@ -115,9 +81,7 @@ namespace arrays
                     Console.Write($"{arraysF[i]} ");
 
                 }
-
             }
-
 
             static void Exercise2()
             {
@@ -151,7 +115,6 @@ namespace arrays
                 {
                     Console.Write($"{x} ");
                 }
-
                 Console.WriteLine("Números em ordem inversa");
                 Console.ReadKey();
                 Console.Clear();
@@ -161,7 +124,6 @@ namespace arrays
                     Console.Write($"{newArray[a]} ");
                 }
             }
-
             static void Exercise3()
             {
                 var c = 5;
@@ -199,12 +161,10 @@ namespace arrays
                         temp = number;
                     }
                 }
-
                 string resultado = "este número  ";
                 resultado += temp != 0 ? "  está no array." : "  não está no array.";
                 Console.WriteLine(resultado);
             }
-
             static void Exercise4()
             {
                 double nbA = 0.0;
@@ -235,7 +195,6 @@ namespace arrays
                     vect[i] = new Arrays(nbA, nbB);
                     Console.Clear();
                 }
-
                 for (int b = 1; b < c; b++)
                 {
                     string resultado = "Os números ";
@@ -273,7 +232,6 @@ namespace arrays
                         }
                     }
                 }
-
                 for (int b = 0; b < arraysD.Length; b++)
                 {
                     if (arraysD[b] < media / value)
@@ -296,9 +254,6 @@ namespace arrays
                 Console.ReadKey();
 
             }
-
-
-
             static void Exercise6()
             {
                 var c = 12;
@@ -396,10 +351,8 @@ namespace arrays
                     Console.Write($"{arraysC[j] } ");
                 }
             }
-
             static void Exercise7()
             {
-
 
                 var arraysA = new int[5] { 5, 4, 6, 3, 2 };
 
@@ -409,11 +362,9 @@ namespace arrays
                 }
             }
 
-
             //-------------Lista 2 Arrays - exercicios 1
             static void Lista2_exercise1()
             {
-
                 var c = 4;
                 Arrays[] vect = new Arrays[c];
                 var tempA = new double[c];
@@ -712,7 +663,8 @@ namespace arrays
                         catch (System.Exception)
                         {
 
-                            Console.WriteLine("Digite números por favor ") ;                       }
+                            Console.WriteLine("Digite números por favor ");
+                        }
                     }
 
                 }
@@ -760,7 +712,7 @@ namespace arrays
                         }
                         catch (System.Exception)
                         {
-                         Console.WriteLine("Dígitos numéricos por favor! ");
+                            Console.WriteLine("Dígitos numéricos por favor! ");
                         }
                     }
 
@@ -782,39 +734,33 @@ namespace arrays
             //-------------Lista 2 Arrays - exercicios 9
             static void Lista2_Exercices9()
             {
-                // string[] letters = new string[10];
-                // List<string> oddSum = new List<string>();
+
                 var d = 4;
-                Arrays[] vect = new Arrays[d];
+
+                String[] vect = new String[d];
+                StringBuilder msg = new StringBuilder();
+
 
                 for (var i = 0; i < d; i++)
                 {
                     Console.WriteLine("Letter: ");
-                    string letters= Console.ReadLine();
-                    
-                     if (i % 2 != 0)
+                    string letter = Console.ReadLine();
+                    vect[i] = letter;
+
+                    if (i % 2 == 0)
                     {
-                        vect[i] = new Arrays(letters);
-                    
+                        msg.Append(letter);
                     }
                 }
 
-               
-
-                Console.WriteLine($"The word formade with the odds index:  ");
-
-                for (var i = 0; i < vect.Length ; i++)
-                {
-                    Console.Write($"{ vect[i] }");
-                }
-
+                Console.WriteLine(msg);
             }
 
             static void Main(string[] args)
             {
                 Lista2_Exercices9();
             }
-        }
+        
     }
 }
 
