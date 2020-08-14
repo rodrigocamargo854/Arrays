@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace arrays
 {
     class Program
@@ -758,7 +759,9 @@ namespace arrays
 
             static void Main(string[] args)
             {
-                Lista2_Exercices9();
+                Teste p = new Teste();
+                Console.WriteLine(p.Somar(2,3));
+                
             }
         
     }
