@@ -207,7 +207,7 @@ namespace arrays
 
             static void Exercise5()
             {
-                int value = 15;
+                int value = 3;
                 var arraysD = new int[value];
 
                 double media = 0.0;
@@ -759,8 +759,7 @@ namespace arrays
 
             static void Main(string[] args)
             {
-                Teste p = new Teste();
-                Console.WriteLine(p.Somar(2,3));
+               Exercise5();
                 
             }
         
